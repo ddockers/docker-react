@@ -1,0 +1,15 @@
+FROM node:16-alpine
+
+ARG REACT_APP_TITLE
+
+ARG FAST_REFRESH
+
+WORKDIR 'app/'
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
